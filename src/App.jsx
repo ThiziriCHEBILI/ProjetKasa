@@ -1,10 +1,16 @@
-import './App.scss'
+import { BrowserRouter } from "react-router-dom";
+import Router from "./Router/Router";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import "./App.scss";
 
 function App() {
   return (
-    <div>
-      <h1>Kasa</h1>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Router />
+      <Footer />
+    </BrowserRouter>
   );
 }
 
