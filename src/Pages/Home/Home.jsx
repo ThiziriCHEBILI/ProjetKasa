@@ -1,6 +1,11 @@
+import Banner from "../../components/Banner/Banner";
+import imagehome from "../../assets/image-home.png";
 function Home() {
+  
   return (
-    <div>Home</div>
+    <>
+    <Banner image={imagehome} texte="Chez vous, partout et ailleurs" />
+     </>
   );
 }
 
