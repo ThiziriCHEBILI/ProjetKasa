@@ -4,12 +4,12 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <header className="header">
+    <header className="header container">
       <NavLink to="/">
         <img src={logo} alt="logo Kasa" className="logo-Header" />
       </NavLink>
 
-      <nav className="navigation">
+      <nav className="header__link">
         <NavLink to="/">Accueil</NavLink>
         <NavLink to="/about">A Propos</NavLink>
       </nav>
@@ -17,3 +17,4 @@ function Header() {
   );
 }
 export default Header;
+
