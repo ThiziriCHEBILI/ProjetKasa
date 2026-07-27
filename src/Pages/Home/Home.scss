@@ -1,3 +1,4 @@
+@use "../../index" as *;
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -6,6 +7,16 @@
     background-color: #F6F6F6;
     padding: 50px;
     border-radius: 25px;
+     a {
+    width: 100%;
+  }
+    @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+        gap: 20px;
+        background-color: $color-white;
+       
+    }
   
 }
 
