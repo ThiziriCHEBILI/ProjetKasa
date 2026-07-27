@@ -3,6 +3,7 @@ $color-primary: #ff6060;
 $color-black: #000000;
 $color-white: #ffffff;
 $font-main: "Montserrat", Arial, sans-serif;
+$breakpoint-mobile: 768px;
 
 // Reset global
 * {
@@ -38,4 +39,10 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+}
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
 }

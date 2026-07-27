@@ -1,21 +1,36 @@
+@use "../../index" as *;
 .header {
   max-width: 1240px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 45px 0;
+  @include mobile {
+     padding: 20px;
+  }
 
   &__link {
     display: flex;
     gap: 58px;
     font-size: 24px;
     font-weight: 500;
-   
+    @include mobile {
+    gap: 26px;
+    font-size: 14px;
   }
-
+  }
  
   &__link a:hover {
     text-decoration: underline;
+  }
+
+  .logo-Header {
+    @include mobile {
+    object-fit: cover;
+    height: 46px;
+    width: 145px;
+  }
+    
   }
 }
 
