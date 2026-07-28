@@ -1,6 +1,7 @@
 import Collapse from "../../components/Collapse/Collapse";
 import Banner from "../../components/Banner/Banner";
 import imageapropos from "../../assets/image-apropos.png";
+import "./About.scss";
 
 function About() {
   const apropos = [
@@ -26,7 +27,7 @@ function About() {
     },
   ];
   return (
-    <div className="apropos__container">
+    <div className="apropos__container container">
       <Banner image={imageapropos} />
       <div className="collapse__container">
         {apropos.map((item, index) => (

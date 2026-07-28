@@ -1,0 +1,13 @@
+@use "../../index" as *;
+
+.apropos__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.collapse__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 45px 208px 0 208px;
+}
