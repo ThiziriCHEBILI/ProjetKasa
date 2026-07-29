@@ -17,6 +17,12 @@
     padding: 15px;
     border: none;
     cursor: pointer;
+     @include mobile {
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    padding: 10px;
+  }
   }
 
   &__arrow {
@@ -28,14 +34,23 @@
     &--open {
       transform: rotate(180deg);
     }
+     @include mobile {
+    width: 20px;
+    height: 20px;
+
+  }
   }
 
   &__content {
     padding: 15px;
-    background-color: rgba(246, 246, 246, 0.45);
     font-size: 18px;
+    background-color: rgba(246, 246, 246, 0.45);
     animation: collapseOpen 0.3s ease;
+      @include mobile {
+    font-size: 12px;
+
   }
+}
 }
 
 @keyframes collapseOpen {
