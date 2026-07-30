@@ -1,11 +1,18 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import Card from "../../components/Card/Card";
-import logements from "../../data/logements.json";
 import imagehome from "../../assets/image-home.png";
 import "./Home.scss";
 
 function Home() {
+  const [logements, setLogements] = useState([]);
+  useEffect(() => {
+  fetch("http://localhost:8080/api/properties")
+    .then((response) => response.json())
+    .then((data) => setLogements(data));
+}, []);
+  
   return (
     <div className="container">
       <Banner image={imagehome} texte="Chez vous, partout et ailleurs" />
