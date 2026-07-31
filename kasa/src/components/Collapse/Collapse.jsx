@@ -16,7 +16,22 @@ function Collapse({ title, content }) {
           onClick={() => setIsOpen(!isOpen)}
         />
       </button>
-      {isOpen && <div className="collapse__content">{content}</div>}
+
+      {isOpen && (
+        <div className="collapse__content">
+          {Array.isArray(content) ? (
+            <ul>
+              {content.map((item, index) => (
+                <li key={index} className="collapse-li">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>{content}</p>
+          )}
+        </div>
+      )}
     </div>
   );
 }

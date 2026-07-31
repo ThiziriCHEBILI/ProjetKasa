@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Collapse from "../../components/Collapse/Collapse";
 
 function Logement() {
   const { id } = useParams();
@@ -39,6 +40,8 @@ function Logement() {
               ></i>
             ))}
           </div>
+          <Collapse title="Description" content={logement.description} />
+          <Collapse title="Équipements" content={logement.equipments} />
         </>
       )}
     </>
