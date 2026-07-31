@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Collapse from "../../components/Collapse/Collapse";
+import Slideshow from "../../components/Slideshow/Slideshow";
 
 function Logement() {
   const { id } = useParams();
@@ -23,6 +24,7 @@ function Logement() {
     <>
       {logement && (
         <>
+        <Slideshow pictures={logement.pictures} alt={logement.title} />
           <h1>{logement.title}</h1>
           <p>{logement.location}</p>
           <ul>

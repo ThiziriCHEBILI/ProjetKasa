@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Slideshow({ pictures }) {
+function Slideshow({ pictures, alt }) {
   const [imageIndex, setImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -13,7 +13,7 @@ function Slideshow({ pictures }) {
 
   return (
     <div>
-      <img src={pictures[imageIndex]} alt="image carousel" />
+      <img src={pictures[imageIndex]} alt={alt} />
       {pictures.length > 1 && (
         <div>
           <i className="fa-solid fa-angle-left" onClick={previousImage}></i>
