@@ -23,7 +23,7 @@ function Logement() {
           setLogement(data);
         }
       });
-  }, []);
+  }, [id, navigate]);
 
   return (
     <div className="logement__container container">
