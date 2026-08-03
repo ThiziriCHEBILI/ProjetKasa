@@ -11,12 +11,16 @@ function Logement() {
 
   useEffect(() => {
     fetch(`http://localhost:8080/api/properties/${id}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          navigate("/404");
+          return null;
+        }
+        return response.json();
+      })
       .then((data) => {
         if (data) {
           setLogement(data);
-        } else {
-          navigate("/404");
         }
       });
   }, []);
@@ -32,9 +36,7 @@ function Logement() {
               <p className="logement__info__location">{logement.location}</p>
               <ul className="logement__info__tags">
                 {logement.tags.map((tag, index) => (
-                  <li key={index} className="logement__tag">
-                    {tag}
-                  </li>
+                  <li key={index} className="logement__tag">{tag}</li>
                 ))}
               </ul>
             </div>
@@ -58,8 +60,8 @@ function Logement() {
             </div>
           </div>
           <div className="logement__collapse">
-          <Collapse title="Description" content={logement.description} />
-          <Collapse title="Équipements" content={logement.equipments} />
+            <Collapse title="Description" content={logement.description} />
+            <Collapse title="Équipements" content={logement.equipments} />
           </div>
         </>
       )}
