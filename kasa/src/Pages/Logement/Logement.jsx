@@ -22,6 +22,10 @@ function Logement() {
         if (data) {
           setLogement(data);
         }
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération du logement :", error);
+        navigate("/404");
       });
   }, [id, navigate]);
 
@@ -36,7 +40,9 @@ function Logement() {
               <p className="logement__info__location">{logement.location}</p>
               <ul className="logement__info__tags">
                 {logement.tags.map((tag, index) => (
-                  <li key={index} className="logement__tag">{tag}</li>
+                  <li key={index} className="logement__tag">
+                    {tag}
+                  </li>
                 ))}
               </ul>
             </div>

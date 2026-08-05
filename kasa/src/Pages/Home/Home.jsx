@@ -10,7 +10,10 @@ function Home() {
   useEffect(() => {
   fetch("http://localhost:8080/api/properties")
     .then((response) => response.json())
-    .then((data) => setLogements(data));
+    .then((data) => setLogements(data))
+    .catch((error) => {
+      console.error("Erreur lors de la récupération des logements :", error);
+    });
 }, []);
   
   return (
