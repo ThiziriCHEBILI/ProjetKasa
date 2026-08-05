@@ -1,14 +1,11 @@
 @use "../../index" as *;
 
 .apropos__container {
-  display: flex;
-  flex-direction: column;
+   @include flex(column);
 }
 
 .collapse__container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+@include flex(column, $gap: 30px);
   margin: 45px 208px 0 208px;
    @include mobile {
     gap: 20px;

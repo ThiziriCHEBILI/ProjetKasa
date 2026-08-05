@@ -1,56 +1,41 @@
 @use "../../index.scss" as *;
 .error {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-   
+  @include flex(column, center, center);
 
-
-&__title {
-    font-size: 288px;
-    font-weight: 700;
-    color: $color-primary;
+  &__title {
+    @include title-primary(288px, 700);
     line-height: 0.75;
     margin-top: 85px;
     @include mobile {
-    font-size: 96px;
-    margin-top: 100px;
+      font-size: 96px;
+      margin-top: 100px;
     }
-}
-&__message {
-  font-size: 36px;
-  font-weight: 500;
-  color: $color-primary;
-  width: 100%;
-  text-align: center;
-  margin: 130px 0;
-
-  @include mobile {
-    font-size: 18px;
-    line-height: 143%;
-    margin: 100px 0;
-    padding: 0 28px;
   }
-}
-&__link {
+  &__message {
+    @include title-primary(36px);
+    width: 100%;
+    text-align: center;
+    margin: 130px 0;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 143%;
+      margin: 100px 0;
+      padding: 0 28px;
+    }
+  }
+  &__link {
     font-size: 18px;
     font-weight: 500;
     text-decoration: underline;
-     &:hover {
+    &:hover {
       text-decoration: none;
     }
     margin-bottom: 80px;
 
     @include mobile {
-    font-size: 14px;
-    margin-bottom: 100px;
- 
+      font-size: 14px;
+      margin-bottom: 100px;
     }
-}
-
-
-
-  
+  }
 }
